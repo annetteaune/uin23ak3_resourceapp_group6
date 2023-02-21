@@ -1,14 +1,8 @@
-export default function Navigation({ categoryList }) {
+export default function Navigation({ cat, index }) {
 	return (
-		<ul>
-			{categoryList.map((cat, index) => {
-				return (
-					<li key={index}>
-						{" "}
-						<a href={"/"}> {cat} </a>{" "}
-					</li>
-				);
-			})}
-		</ul>
+		<li key={index}>
+			{" "}
+			<a href={"/"}> {cat} </a>
+		</li>
 	);
 }
