@@ -1,9 +1,15 @@
 import Navigation from "./Navigation";
 import Resources from "./Resources";
 import Title from "./Title";
-import resources from "../ressurser";
 
-export default function Layout({ categoryList }) {
+export default function Layout({
+	categoryList,
+	selectedTab,
+	setSelectedTab,
+	filter,
+	setTabIndex,
+	tabIndex,
+}) {
 	return (
 		<>
 			<header>
@@ -12,23 +18,23 @@ export default function Layout({ categoryList }) {
 			<nav>
 				<ul>
 					{categoryList.map((cat, index) => (
-						<Navigation cat={cat} index={index} />
+						<Navigation
+							cat={cat}
+							index={index}
+							selectedTab={selectedTab}
+							setSelectedTab={setSelectedTab}
+							tabIndex={tabIndex}
+							setTabIndex={setTabIndex}
+						/>
 					))}
 				</ul>
 			</nav>
 			<main>
 				<article>
-					{categoryList.map((tags, index) => (
-						<Title title={tags} index={index} />
-					))}
+					<Title title={selectedTab} />
 					<ul>
-						{resources.map((tags, index) => (
-							<Resources
-								url={tags.url}
-								title={tags.title}
-								linkname={tags.category}
-								index={index}
-							/>
+						{filter.map((tags, index) => (
+							<Resources url={tags.url} linkname={tags.title} key={index} />
 						))}
 					</ul>
 				</article>
