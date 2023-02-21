@@ -20,7 +20,7 @@ export default function Layout({
 					{categoryList.map((cat, index) => (
 						<Navigation
 							cat={cat}
-							index={index}
+							key={index}
 							selectedTab={selectedTab}
 							setSelectedTab={setSelectedTab}
 							tabIndex={tabIndex}
