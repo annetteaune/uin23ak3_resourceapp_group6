@@ -2,6 +2,9 @@ import "./css/main.css";
 import Layout from "./components/Layout";
 import resources from "./ressurser";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import Resources from "./components/Resources";
+import Navigation from "./components/Navigation";
 
 function App() {
 	// Mappe ut kun unike kategorinavn, kilde:
@@ -18,17 +21,37 @@ function App() {
 	const filter = resources.filter((find) => find.category === selectedTab);
 
 	return (
-		<div className="App">
-			<Layout
-				categoryList={categoryList}
-				resources={resources}
-				selectedTab={selectedTab}
-				setSelectedTab={setSelectedTab}
-				filter={filter}
-        tabIndex={tabIndex}
-        setTabIndex={setTabIndex}
+		<Routes>
+			<Route
+				path="/"
+				index
+				element={
+					<Layout
+						categoryList={categoryList}
+						resources={resources}
+						selectedTab={selectedTab}
+						setSelectedTab={setSelectedTab}
+						filter={filter}
+						tabIndex={tabIndex}
+						setTabIndex={setTabIndex}
+					/>
+				}
 			/>
-		</div>
+			<Route
+				path={selectedTab}
+				element={
+					<Layout
+						categoryList={categoryList}
+						resources={resources}
+						selectedTab={selectedTab}
+						setSelectedTab={setSelectedTab}
+						filter={filter}
+						tabIndex={tabIndex}
+						setTabIndex={setTabIndex}
+					/>
+				}
+			/>
+		</Routes>
 	);
 }
 
