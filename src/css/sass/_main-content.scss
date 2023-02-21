@@ -1,0 +1,32 @@
+main {
+	display: flex;
+	width: 60%;
+	margin: auto;
+	border: 1px solid var(--border);
+	border-top: none;
+	padding-bottom: 3rem;
+	article ul {
+		padding: 0 1.8rem;
+		line-height: 70%;
+		li a {
+			font-size: 0.6rem;
+			color: var(--cyan);
+		}
+	}
+}
+
+h2 {
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	padding: 0.5rem 1rem;
+}
+p {
+	font-size: 0.6rem;
+	padding: 0 1rem;
+	max-width: 70%;
+}
+
+main article ul li a:hover {
+	color: var(--gray);
+	font-weight: bolder;
+}
