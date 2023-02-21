@@ -1,13 +1,17 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Layout from './components/Layout';
+import resources from "./ressurser"
 
 function App() {
-  return (
-    <div className="App">
-     <Layout />
-    </div>
-  );
+	// Mappe ut kun unike kategorinavn, kilde:
+	// https://plainenglish.io/blog/how-to-get-distinct-values-from-an-array-of-objects-in-javascript
+	const categoryList = [...new Set(resources.map((cat) => cat.category))];
+	return (
+		<div className="App">
+			<Layout categoryList={categoryList}/>
+		</div>
+	);
 }
 
 export default App;

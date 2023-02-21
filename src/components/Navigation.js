@@ -1,3 +1,9 @@
-export default function Navigation(){
-    return <p>Navigation</p>
+export default function Navigation({ categoryList }) {
+	return (
+		<ul>
+			{categoryList.map((cat, index) => {
+				return <li> {cat}</li>;
+			})}
+		</ul>
+	);
 }
