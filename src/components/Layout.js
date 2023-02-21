@@ -1,8 +1,9 @@
 import Navigation from "./Navigation";
 import Resources from "./Resources";
 import Title from "./Title";
+import resources from "../ressurser";
 
-export default function Layout({ categoryList, resources }) {
+export default function Layout({ categoryList }) {
 	return (
 		<>
 			<header>
@@ -10,15 +11,26 @@ export default function Layout({ categoryList, resources }) {
 			</header>
 			<nav>
 				<ul>
-					{categoryList.map((cat) => (
-						<Navigation cat={cat} />
+					{categoryList.map((cat, index) => (
+						<Navigation cat={cat} index={index} />
 					))}
 				</ul>
 			</nav>
 			<main>
 				<article>
-					<Title title={resources.title} />
-					<Resources resources={resources} />
+					{categoryList.map((tags, index) => (
+						<Title title={tags} index={index} />
+					))}
+					<ul>
+						{resources.map((tags, index) => (
+							<Resources
+								url={tags.url}
+								title={tags.title}
+								linkname={tags.category}
+								index={index}
+							/>
+						))}
+					</ul>
 				</article>
 			</main>
 			<footer></footer>

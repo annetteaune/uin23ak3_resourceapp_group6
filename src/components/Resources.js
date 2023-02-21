@@ -1,10 +1,7 @@
-export default function Resources({ resources }) {
-    console.log(resources)
+export default function Resources({ linkname, url, index}) {
 	return (
-        resources.map((cat, index) => {
-            <li key={index}>
-                <a href={cat.url}>{cat.title}</a>
-            </li>
-        })
-    )
+		<li key={index}>
+			<a href={url}>{linkname}</a>
+		</li>
+	);
 }
