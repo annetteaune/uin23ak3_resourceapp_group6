@@ -1,7 +1,6 @@
-
-import './App.css';
-import Layout from './components/Layout';
-import resources from "./ressurser"
+import "./css/main.css";
+import Layout from "./components/Layout";
+import resources from "./ressurser";
 
 function App() {
 	// Mappe ut kun unike kategorinavn, kilde:
@@ -9,7 +8,7 @@ function App() {
 	const categoryList = [...new Set(resources.map((cat) => cat.category))];
 	return (
 		<div className="App">
-			<Layout categoryList={categoryList}/>
+			<Layout categoryList={categoryList} />
 		</div>
 	);
 }
