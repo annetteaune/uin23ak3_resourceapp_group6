@@ -11,6 +11,10 @@ main {
 		li a {
 			font-size: 0.6rem;
 			color: var(--cyan);
+				&:focus {
+					text-decoration: underline;
+					font-weight: bolder;
+				}
 		}
 	}
 }

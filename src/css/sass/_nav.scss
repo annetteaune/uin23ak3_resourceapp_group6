@@ -30,6 +30,10 @@ nav {
 				&:hover {
 					text-decoration: underline;
 				}
+				&:focus {
+					text-decoration: underline;
+					font-weight: bolder;
+				}
 			}
 		}
 
