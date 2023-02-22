@@ -76,4 +76,5 @@ const resources = [
     }
 ]
 
+//Legger til export slik at man kan mappe gjennom fila
 export default resources

@@ -12,8 +12,10 @@ function App() {
 	// State for aktiv tab, default på html
 	let [selectedTab, setSelectedTab] = useState("html");
 
+  // Finner aktiv kategori for videre mapping av linker
 	const filter = resources.filter((find) => find.category === selectedTab);
 
+  //Default router
 	return (
 		<Routes>
 			<Route
@@ -29,6 +31,7 @@ function App() {
 					/>
 				}
 			/>
+      {/* Router til samme oppsett av siden når man trykker på en tab, unngår åpning av "blank" side */}
 			<Route
 				path={selectedTab}
 				element={

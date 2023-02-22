@@ -14,6 +14,7 @@ export default function Layout({
 				<h1>Ressursarkiv</h1>
 			</header>
 			<nav>
+                {/* Mapper gjennom de unike kategoriene for opplisting av tabs, setter state */}
 				<ul>
 					{categoryList.map((cat, index) => (
 						<Navigation
@@ -27,8 +28,11 @@ export default function Layout({
 			</nav>
 			<main>
 				<article>
+                    {/* Setter tittel basert på valgt kategori */}
 					<Title title={selectedTab} />
 					<ul>
+                        {/* Mapper gjennom ressurser basert på filter av valgt kategori for
+                            opplisting av linker */}
 						{filter.map((tags, index) => (
 							<Resources url={tags.url} linkname={tags.title} key={index} />
 						))}

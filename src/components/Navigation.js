@@ -12,7 +12,8 @@ export default function Navigation({
 			onClick={() => {
 				setSelectedTab(cat);
 			}}
-			className={`${ selectedTab === cat ? "activetab" : "inactive"}`}
+			// Setter css-class; om valgt kategori er lik kategorinavn, gi klasse 
+			className={`${ selectedTab === cat ? "activetab" : ""}`}
 		>
 			{/* Hadde problemer med at pathen ble nested, fant løsning her: 
 			https://stackoverflow.com/questions/54803285/prevent-nested-link-component-from-inheriting-path-from-previous-link-rea */}
