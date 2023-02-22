@@ -7,8 +7,6 @@ export default function Layout({
 	selectedTab,
 	setSelectedTab,
 	filter,
-	setTabIndex,
-	tabIndex,
 }) {
 	return (
 		<>
@@ -23,8 +21,6 @@ export default function Layout({
 							key={index}
 							selectedTab={selectedTab}
 							setSelectedTab={setSelectedTab}
-							tabIndex={tabIndex}
-							setTabIndex={setTabIndex}
 						/>
 					))}
 				</ul>

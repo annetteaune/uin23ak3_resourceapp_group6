@@ -3,8 +3,6 @@ import Layout from "./components/Layout";
 import resources from "./ressurser";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Resources from "./components/Resources";
-import Navigation from "./components/Navigation";
 
 function App() {
 	// Mappe ut kun unike kategorinavn, kilde:
@@ -13,10 +11,6 @@ function App() {
 
 	// State for aktiv tab, default på html
 	let [selectedTab, setSelectedTab] = useState("html");
-
-	// State for å bytte farge på aktiv tab
-	// Kilde: https://stackoverflow.com/questions/56114153/add-active-class-on-a-map-items-react
-	const [tabIndex, setTabIndex] = useState(0);
 
 	const filter = resources.filter((find) => find.category === selectedTab);
 
@@ -32,8 +26,6 @@ function App() {
 						selectedTab={selectedTab}
 						setSelectedTab={setSelectedTab}
 						filter={filter}
-						tabIndex={tabIndex}
-						setTabIndex={setTabIndex}
 					/>
 				}
 			/>
@@ -46,8 +38,6 @@ function App() {
 						selectedTab={selectedTab}
 						setSelectedTab={setSelectedTab}
 						filter={filter}
-						tabIndex={tabIndex}
-						setTabIndex={setTabIndex}
 					/>
 				}
 			/>
